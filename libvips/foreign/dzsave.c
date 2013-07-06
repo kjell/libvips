@@ -768,12 +768,12 @@ tile_name( Layer *layer, char *buf, int x, int y )
 		break;
 
 	case VIPS_FOREIGN_DZ_LAYOUT_GOOGLE:
-		vips_snprintf( dirname, VIPS_PATH_MAX, 
-			"%s/%d", dz->basename, layer->n );
-		vips_snprintf( dirname2, VIPS_PATH_MAX, 
-			"%s/%d", dirname, y );
-		vips_snprintf( buf, VIPS_PATH_MAX, 
-			"%s/%d%s", dirname2, x, dz->suffix );
+		vips_snprintf( dirname, PATH_MAX, "%s/%d",
+			dz->basename, layer->n );
+		vips_snprintf( dirname2, PATH_MAX, "%s/%d",
+			dirname, x );
+		vips_snprintf( buf, PATH_MAX, "%s/%d%s",
+			dirname2, y, dz->suffix );
 
 		if( !vips_existsf( "%s", dirname ) &&
 			vips_mkdirf( "%s", dirname ) ) {
