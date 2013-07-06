@@ -854,7 +854,7 @@ strip_work( VipsThreadState *state, void *a )
 
 	/* Google tiles need to be padded up to tilesize.
 	 */
-	if( dz->layout == VIPS_FOREIGN_DZ_LAYOUT_GOOGLE ) {
+	if( 0 && dz->layout == VIPS_FOREIGN_DZ_LAYOUT_GOOGLE ) {
 		if( vips_embed( x, &t, 0, 0, dz->tile_size, dz->tile_size,
 			"background", dz->background,
 			NULL ) ) {
