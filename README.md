@@ -1,5 +1,15 @@
 # libvips : an image processing library
 
+## (This is a fork of [jcupitt/libvips](https://github.com/jcupitt/libvips)
+
+`vips dzsave --layout=google` is modified to 
+* save tiles `z/x/y` (instead of `z/y/x`)
+* not pad edge tiles with a background color
+
+You'll need a modified version of leaflet to use the unpadded tiles.)
+
+---
+
 [![Build Status](https://travis-ci.org/jcupitt/libvips.svg?branch=master)](https://travis-ci.org/jcupitt/libvips)
 [![Coverity Status](https://scan.coverity.com/projects/6503/badge.svg)](https://scan.coverity.com/projects/jcupitt-libvips)
 

@@ -1037,9 +1037,9 @@ tile_name( Layer *layer, int x, int y )
 
 	case VIPS_FOREIGN_DZ_LAYOUT_GOOGLE:
 		vips_snprintf( dirname, VIPS_PATH_MAX, "%d", layer->n );
-		vips_snprintf( dirname2, VIPS_PATH_MAX, "%d", y );
-		vips_snprintf( name, VIPS_PATH_MAX, 
-			"%d%s", x, dz->file_suffix );
+		vips_snprintf( dirname2, VIPS_PATH_MAX, "%d", x );
+		vips_snprintf( name, VIPS_PATH_MAX,
+			"%d%s", y, dz->file_suffix );
 
 		out = vips_gsf_path( dz->tree, name, dirname, dirname2, NULL );
 
@@ -1201,7 +1201,7 @@ strip_work( VipsThreadState *state, void *a )
 
 	/* Google tiles need to be padded up to tilesize.
 	 */
-	if( dz->layout == VIPS_FOREIGN_DZ_LAYOUT_GOOGLE ) {
+	if( 0 && dz->layout == VIPS_FOREIGN_DZ_LAYOUT_GOOGLE ) {
 		if( vips_embed( x, &t, 0, 0, dz->tile_size, dz->tile_size,
 			"background", save->background,
 			NULL ) ) {
